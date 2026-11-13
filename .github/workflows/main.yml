@@ -1,8 +1,7 @@
 name: Build and Deploy to Azure Container Apps
 
 on:
-  push:
-    branches:
+  workflow_dispatch:
 
 jobs:
 
