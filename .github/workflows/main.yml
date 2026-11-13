@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_CONTAINER_REGISTRY:
-  CONTAINER_APP_NAME:
-  RESOURCE_GROUP:
+  AZURE_CONTAINER_REGISTRY: acagithubdemo12nov
+  CONTAINER_APP_NAME: aca-github-demo
+  RESOURCE_GROUP: rg-aca-github-demo
   
 jobs:
 
