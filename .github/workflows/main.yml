@@ -30,15 +30,15 @@ jobs:
 
       - name: Log in to ACR
       - uses: docker/login@v3
-       with:
-        registry: ${{env.AZURE_CONTAINER_REGISTRY}}.azurecr.io
-        username: ${{secrets.AZURE_REGISTRY_USERNAME}}
-        password: ${{secrets.AZURE_REGISTRY_PASSWORD}}
+        with:
+         registry: ${{env.AZURE_CONTAINER_REGISTRY}}.azurecr.io
+         username: ${{secrets.AZURE_REGISTRY_USERNAME}}
+         password: ${{secrets.AZURE_REGISTRY_PASSWORD}}
 
       - name: Build and push container image to ACR
       - uses: docker/build-push-action@v6
         with:
          push: true
          tags: ${{env.AZURE_CONTAINER_REGISTRY}}.azurecr.io/${{env.CONTAINER_APP_NAME}}
-         file: Dockerfile
+         file: ContainerAppDemo/Dockerfile
       
