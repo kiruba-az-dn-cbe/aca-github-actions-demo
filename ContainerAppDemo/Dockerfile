@@ -8,7 +8,7 @@ WORKDIR /src
 COPY ["ContainerAppDemo/ContainerAppDemo.csproj", "ContainerAppDemo/"]
 RUN dotnet restore "./ContainerAppDemo/ContainerAppDemo.csproj"
 COPY . .
-RUN dotnet build "./ContainerAppDemo.csproj"  -c Release  -o /app/build
+RUN dotnet build "./ContainerAppDemo/ContainerAppDemo.csproj"  -c Release  -o /app/build
 
 FROM build AS publish
 ARG configuration=Release
