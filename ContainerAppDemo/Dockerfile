@@ -12,7 +12,7 @@ RUN dotnet build "./ContainerAppDemo/ContainerAppDemo.csproj"  -c Release  -o /a
 
 FROM build AS publish
 ARG configuration=Release
-RUN dotnet publish "ContainerAppDemo.csproj" -c $configuration -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./ContainerAppDemo/ContainerAppDemo.csproj" -c $configuration -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
