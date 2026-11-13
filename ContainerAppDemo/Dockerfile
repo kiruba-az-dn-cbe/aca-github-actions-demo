@@ -5,10 +5,10 @@ EXPOSE 8080
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["ContainerAppDemo.csproj", "."]
-RUN dotnet restore "ContainerAppDemo.csproj"
+COPY ["ContainerAppDemo/ContainerAppDemo.csproj", "ContainerAppDemo/"]
+RUN dotnet restore "./ContainerAppDemo/ContainerAppDemo.csproj"
 COPY . .
-RUN dotnet build "ContainerAppDemo.csproj"  -c Release  -o /app/build
+RUN dotnet build "./ContainerAppDemo.csproj"  -c Release  -o /app/build
 
 FROM build AS publish
 ARG configuration=Release
